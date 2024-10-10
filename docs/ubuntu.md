@@ -1,4 +1,4 @@
-# Get information on CUDA installation version
+# Information on CUDA Installation Version
 ```
 nvcc -V
 ```
@@ -11,7 +11,7 @@ Build cuda_11.5.r11.5/compiler.30672275_0
 ```
 
 
-# Get information on Ubuntu installation
+# Information on Ubuntu Installation Version
 ```
 lsb_release -a
 ```
@@ -24,6 +24,14 @@ Release:        22.04
 Codename:       jammy
 ```
 
+# Kernel Version
+```
+uname -r
+```
+
+```
+6.8.0-45-generic
+```
 
 # Create conda environment
 conda create -n mcma-env
@@ -31,4 +39,3 @@ conda create -n mcma-env
 
 pip install tensorflow[and-cuda]
 conda install python=3.12.4
-uname -r
