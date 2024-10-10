@@ -4,4 +4,4 @@
 
 export REPOSITORY_ROOT="$(pwd)/../"
 export TMUX_SESSION="MCAM"
-export CONDA_ENV="mcam-env"
+export CONDA_ENV="mcma-env"
