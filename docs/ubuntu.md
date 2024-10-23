@@ -6,5 +6,9 @@ The accompanying YouTube video is found here :
 ==============================================
 * [Link](https://www.youtube.com/watch?v=1Tr1ifuSh6o)
 
-The only exception is that I am using python version 3.9.20 in my Conda environment 
-and I am also using Tensorflow version 2.16.1
+Comments
+========
+The only exception is that I am using Python version 3.9.20 in my Conda environment 
+and I am also using TensorFlow version 2.16.1.
+
+Note that these instructions ensure that the instance of TensorFlow GPU works well with CUDA, cuDNN, TensorRT.
