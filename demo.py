@@ -1,6 +1,6 @@
 # 导入库函数，包括os、tf等等
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '6,7'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import tensorflow as tf
 import numpy as np
 import glob
@@ -71,6 +71,8 @@ if __name__=='__main__':
     # Model loading
     # https://drive.google.com/drive/folders/1m57dz-FhcQCGNoZ2wxA_sUoHgrrGRHIn?usp=sharing
     modelpath = "Generator"
+    breakpoint()
+    #model = tf.keras.layers.TFSMLayer(modelpath, call_endpoint='serving_default')
     model = tf.keras.models.load_model(modelpath)
     #Reading your data, firstly
     datapath = "./Sample_data/"
