@@ -16,7 +16,7 @@ First author: Jiarong Chen&nbsp;
 - [x] The testing algorithm
 - [x] Pretrained weights
 - [x] The samples for testing
-
+- [x] The datasets
 ### Contributions
 - [x] Reconstructing 12-Lead ECG from Arbitrary Single-Lead ECG
 - [x] Comprehensive Evaluations, including signal-level, feature-level, and diagnostic-level
@@ -59,11 +59,30 @@ or
 ```
 ### Files 
 It includes demo.py, the trained model, and sample data.
+## Datasets
+
+All datasets used in this study are openly available. You can access them through the following links:
+
+- **PTB-XL**: 
+  [PhysioNet: PTB-XL Database](https://physionet.org/content/ptb-xl/1.0.3/)
+  
+- **CPSC-2018**: 
+  [Challenge of CPSC 2018](http://2018.icbeb.org/Challenge.html)
+  
+- **CODE-test**: 
+  [CODE Test Dataset on Zenodo](https://zenodo.org/records/3765780)
+
+Of course, I have uploaded these datasets online.
+
+- For **Baidu Netdisk**: https://pan.baidu.com/s/1yycZodJyFAG95D_O6_jA_Q?pwd=MCMA 
+- For  **Google Drive**: https://drive.google.com/drive/folders/1wGtq2D8Ssx9cRx_K3Li3t85nMc7WfTF1?usp=sharing
 
 ### Environment
 ```
 conda env create -f environment.yml
 ```
+You may fail to create your environment due to some issues, and I suggest you to pip install some packages.
+
 ### Future work
 1. I have tried different setting, but more efforts in model designing are necessary for this task.
 2. High quality ECG, although this study based on the public dataset, the signal quality influence its evaluation and reconstruction.
