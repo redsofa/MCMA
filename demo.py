@@ -79,4 +79,4 @@ if __name__=='__main__':
     ecg1 = Read_ECG(datapath,lead_idx=lead_idx)
     #generating 12-lead ECG
     gen_ecg12 = Reconstructing_ECG(ecg1,model=model,ecglen=ecglen,lead_idx=lead_idx)
-
+    print(gen_ecg12)
