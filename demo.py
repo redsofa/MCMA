@@ -1,11 +1,11 @@
-# 导入库函数，包括os、tf等等
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import tensorflow as tf
 import numpy as np
 import glob
 import scipy.io as sio
 
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 tf.config.run_functions_eagerly(True)
 
 # Using zero-padding to support arbitrary single-lead.
@@ -58,7 +58,7 @@ def Reconstructing_ECG(ecgall,model,ecglen=1024,lead_idx=0):
         ecg1_new = tf.concat([ecg1, ecg1[:, -padding_len:, :]], axis=1)
         ecg1_new = tf.cast(tf.reshape(ecg1_new, shape=(-1, 1024, 1)),dtype=tf.float32)
         ecg1_new = paddingecg(ecg1_new,lead_idx)
-        gen_ecg12 = model.predict(ecg1_new)
+        gen_ecg12 = model(ecg1_new)
         gen_ecg12 = tf.reshape(gen_ecg12, (-1, ecg1.shape[1] + padding_len, 12))
         gen_ecg12 = gen_ecg12[:, :-padding_len, :]
         gen_ecg12all.append(gen_ecg12[0])
@@ -71,9 +71,9 @@ if __name__=='__main__':
     # Model loading
     # https://drive.google.com/drive/folders/1m57dz-FhcQCGNoZ2wxA_sUoHgrrGRHIn?usp=sharing
     modelpath = "Generator"
-    breakpoint()
-    #model = tf.keras.layers.TFSMLayer(modelpath, call_endpoint='serving_default')
-    model = tf.keras.models.load_model(modelpath)
+    model = tf.saved_model.load(modelpath) # tf.keras.models.load_model(modelpath)
+    # print(model.summary())
+
     #Reading your data, firstly
     datapath = "./Sample_data/"
     ecg1 = Read_ECG(datapath,lead_idx=lead_idx)
